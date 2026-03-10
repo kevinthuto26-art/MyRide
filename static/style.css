@@ -1,9 +1,10 @@
-/* General page style */
 body{
+    background-image: url("/static/pexels-rahulp9800-2792385.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
-    background-color:#fff9c4;
-    margin:0;
-    padding:0;
+    color: white;
 }
 
 /* Header */
