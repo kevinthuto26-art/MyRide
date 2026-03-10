@@ -62,6 +62,45 @@ header h1{
     100%{transform:scale(1);}
 }
 
+/* Center login box */
+.login-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:80vh;
+}
+
+/* Style the login form */
+.login-box form{
+    background:rgba(0,0,0,0.75);
+    padding:40px;
+    border-radius:12px;
+    width:320px;
+    text-align:center;
+}
+
+/* Inputs */
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+}
+
+/* Login button */
+.login-box button{
+    width:100%;
+    padding:12px;
+    font-size:18px;
+    background:#FFD500;
+    color:black;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
 .book-btn{
     animation:pulse 2s infinite;
 }
