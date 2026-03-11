@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <title>Passenger Login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -12,13 +11,17 @@
 
 <form method="POST" action="/passenger_login">
 
-<h2>Passenger Login</h2>
+<h2>Passenger Login 🚕</h2>
 
 <input type="text" name="username" placeholder="Username" required>
 
 <input type="password" name="password" placeholder="Password" required>
 
 <button type="submit">Login</button>
+
+<p>Don't have an account?</p>
+
+<a href="/register_passenger">Register as Passenger</a>
 
 </form>
 
