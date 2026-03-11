@@ -82,5 +82,28 @@ def ride_status():
     )
 
 
+@app.route("/book_ride", methods=["GET","POST"])
+def book_ride():
+
+    if request.method == "POST":
+        pickup = request.form["pickup"]
+        destination = request.form["destination"]
+
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        c.execute(
+            "INSERT INTO rides (pickup, destination, status) VALUES (?, ?, ?)",
+            (pickup, destination, "waiting")
+        )
+
+        conn.commit()
+        conn.close()
+
+        return "Ride Requested!"
+
+    return render_template("book_ride.html")
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
