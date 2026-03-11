@@ -45,6 +45,35 @@ def request_ride():
     return redirect("/passenger_dashboard")
 
 
+@app.route("/passenger_login", methods=["GET","POST"])
+def passenger_login():
+
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+
+        if username == "passenger" and password == "1234":
+            return redirect("/passenger_dashboard")
+
+        return "Invalid login"
+
+    return render_template("passenger_login.html")
+
+
+@app.route("/driver_login", methods=["GET","POST"])
+def driver_login():
+
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+
+        if username == "driver" and password == "1234":
+            return redirect("/driver_dashboard")
+
+        return "Invalid login"
+
+    return render_template("driver_login.html")
+
 # DRIVER DASHBOARD
 @app.route("/driver_dashboard")
 def driver_dashboard():
