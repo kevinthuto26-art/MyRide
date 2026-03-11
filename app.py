@@ -37,8 +37,10 @@ def request_ride():
 def passenger_login():
 
     if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        print(username, password)
 
         if username == "passenger" and password == "1234":
             return redirect("/passenger_dashboard")
