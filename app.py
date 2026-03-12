@@ -10,10 +10,14 @@ def home():
     return render_template("home.html")
 
 
-# PASSENGER DASHBOARD
 @app.route("/passenger_dashboard")
 def passenger_dashboard():
-    ride = database.get_latest_ride()
+
+    rides = database.get_waiting_rides()
+
+    ride = None
+    if rides:
+        ride = rides[-1]   # show the most recent ride
 
     return render_template(
         "passenger_dashboard.html",
